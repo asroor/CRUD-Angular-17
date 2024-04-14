@@ -1,15 +1,10 @@
 <nz-layout>
-	<nz-header>
-		<div class="logo"></div>
-		<ul nz-menu nzTheme="dark" nzMode="horizontal">
-			<li nz-menu-item>nav 1</li>
-			<li nz-menu-item>nav 2</li>
-			<li nz-menu-item>nav 3</li>
-		</ul>
-	</nz-header>
 	<nz-content>
 		<app-breadcrumb></app-breadcrumb>
-		<div class="inner-content">Content</div>
+		<div class="inner-content">
+			<router-outlet></router-outlet>
+		</div>
 	</nz-content>
-	<nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+	<nz-footer>© <a href="https://kwork.ru/user/smartcoder" target="_blank">smartCoder</a>, 2024-2025
+		Create by <a href="https://github.com/asroor" target="_blank">Asror Shodiyev</a></nz-footer>
 </nz-layout>

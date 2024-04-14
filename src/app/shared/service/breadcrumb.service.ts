@@ -6,10 +6,18 @@ import { TBreadcrumb } from '../../../types/';
 	providedIn: 'root'
 })
 export class BreadcrumbService {
-	breadcrumb$ = new BehaviorSubject<TBreadcrumb[]>([])
+	breadcrumb$ = new BehaviorSubject<Array<{
+		header: string;
+		label: string;
+		url: string
+	}>>([])
 	constructor() { }
 
-	setBreadcrumb(breadcrumb: TBreadcrumb[]) {
+	setBreadcrumb(breadcrumb: Array<{
+		header: string;
+		label: string;
+		url: string
+	}>) {
 		this.breadcrumb$.next(breadcrumb)
 	}
 }

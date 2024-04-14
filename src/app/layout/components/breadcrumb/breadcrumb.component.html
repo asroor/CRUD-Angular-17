@@ -1,5 +1,10 @@
 <nz-breadcrumb>
-	<nz-breadcrumb-item [routerLink]="['/']">Home</nz-breadcrumb-item>
-	<nz-breadcrumb-item [routerLink]="[breadcrumb$.url]">{{breadcrumb$.header}}</nz-breadcrumb-item>
-	<nz-breadcrumb-item>{{breadcrumb$.label}}</nz-breadcrumb-item>
+	<ng-container *ngFor="let breadcrumb of breadcrumb$.value">
+	<nz-breadcrumb-item [routerLink]="['/home']">Home</nz-breadcrumb-item>
+
+	<nz-breadcrumb-item *ngIf="breadcrumb.header!== ''"
+		[routerLink]="[breadcrumb.url]">{{breadcrumb.header}}</nz-breadcrumb-item>
+	
+		<nz-breadcrumb-item *ngIf="breadcrumb.label!== ''">{{breadcrumb.label}}</nz-breadcrumb-item>
+</ng-container>
 </nz-breadcrumb>

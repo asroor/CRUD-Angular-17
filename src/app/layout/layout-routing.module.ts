@@ -4,7 +4,13 @@ import { LayoutComponent } from "./layout.component";
 
 const routes: Routes = [
 	{
-		path: '', component: LayoutComponent
+		path: '', component: LayoutComponent,
+		children: [
+			{
+				path: 'home', loadChildren: () => import('../modules').then((m) => m.HomeModule)
+			},
+			{ path: '', redirectTo: 'home', pathMatch: 'full' }
+		]
 	}
 ]
 
@@ -13,4 +19,4 @@ const routes: Routes = [
 	exports: [RouterModule]
 })
 
-export class LayoutRoutingModule {}
+export class LayoutRoutingModule { }
