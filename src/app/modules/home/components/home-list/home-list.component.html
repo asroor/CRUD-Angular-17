@@ -1,1 +1,14 @@
-<p>home-list works!</p>
+<nz-table #basicTable [nzData]="todos">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Title</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let todo of basicTable.data">
+			<td>{{todo.id}}</td>
+			<td>{{todo.todo}}</td>
+		</tr>
+	</tbody>
+</nz-table>

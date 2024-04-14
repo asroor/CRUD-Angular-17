@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TBreadcrumb } from '../../../../../types';
 import { BreadcrumbService } from '../../../../shared';
+import { AllTodosService } from '../../../../shared/service/alltodos.service';
+import { ITodos } from '../../../../shared/interface';
 
 @Component({
 	selector: 'app-home-list',
@@ -8,9 +10,13 @@ import { BreadcrumbService } from '../../../../shared';
 	styleUrl: './home-list.component.css'
 })
 export class HomeListComponent implements OnInit {
-	breadcrumb: TBreadcrumb = { header: "Todos", label: '', url: "URL" }
-	constructor(private breadcrumbService: BreadcrumbService) {	}
+	todos: ITodos[]
+	constructor(private allTodosService: AllTodosService) {
+		this.todos = []
+	}
 	ngOnInit(): void {
-		this.breadcrumbService.setBreadcrumb([this.breadcrumb])
+		this.allTodosService.getAllTodos().subscribe((res) => {
+			this.todos = res
+		})
 	}
 }
