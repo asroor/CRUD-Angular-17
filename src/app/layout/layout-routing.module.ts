@@ -9,9 +9,12 @@ const routes: Routes = [
 			{
 				path: 'home', loadChildren: () => import('../modules').then((m) => m.HomeModule)
 			},
-			{ path: '', redirectTo: 'home', pathMatch: 'full' }
+			{
+				path: 'todos', loadChildren: () => import('../modules').then((m) => m.TodosModule)
+			},
 		]
-	}
+	},
+	{ path: '', redirectTo: 'home', pathMatch: 'full' }
 ]
 
 @NgModule({

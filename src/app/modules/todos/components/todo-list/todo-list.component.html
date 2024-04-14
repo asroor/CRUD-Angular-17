@@ -1,1 +1,19 @@
-<p>todo-list works!</p>
+<nz-table #basicTable [nzData]="todos">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Title</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let todo of basicTable.data">
+			<td>{{todo.id}}</td>
+			<td>{{todo.todo}}</td>
+			<td class="buttons">
+				<button type="button" nz-button nzType="primary" routerLink="update/{{todo.id}}">Update</button>
+				<button type="button" nz-button nzType="primary" nzDanger>Delate</button>
+			</td>
+		</tr>
+	</tbody>
+</nz-table>

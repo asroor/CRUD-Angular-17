@@ -1,0 +1,7 @@
+.form-buttons {
+	margin-top: 10px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-end;
+	column-gap: 10px;
+}
