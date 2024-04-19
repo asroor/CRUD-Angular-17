@@ -1,3 +1,8 @@
 button {
 	margin-bottom: 10px;
 }
+.page-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}

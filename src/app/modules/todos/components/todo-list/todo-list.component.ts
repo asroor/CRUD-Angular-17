@@ -16,13 +16,19 @@ export class TodoListComponent implements OnInit, OnDestroy {
 		this.todos = []
 	}
 	ngOnInit(): void {
+		this.getAll()
+	}
+	delateFN(id: number | string): void {
+		this.sub = this.allTodosService.deleteTodo(id).subscribe(
+			res => {
+				this.getAll()
+			}
+		)
+	}
+	getAll() {
 		this.sub = this.allTodosService.getAllTodos().subscribe((res) => {
 			this.todos = res
 		})
-	}
-
-	delateFN(id: number | string): void {
-		this.sub = this.allTodosService.delateTodo(id).subscribe()
 	}
 	ngOnDestroy(): void {
 		this.sub.unsubscribe()

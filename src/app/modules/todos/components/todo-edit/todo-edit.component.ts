@@ -12,12 +12,6 @@ import { ITodos } from '../../../../shared/interface';
 export class TodoEditComponent implements OnInit {
 	isAddPage: boolean = false
 	constructor(private fb: FormBuilder, private route: ActivatedRoute, private allTodosService: AllTodosService, private router: Router) {
-		const currentURL: string = route.snapshot.url[0].path
-		if (currentURL === 'add') {
-			this.isAddPage = true;
-		} else {
-			this.isAddPage = false;
-		}
 	}
 	form = this.fb.nonNullable.group({
 		userId: [1, Validators.required],
@@ -26,13 +20,27 @@ export class TodoEditComponent implements OnInit {
 	});
 	pageTodoID: number | string = this.route.snapshot.params['id']
 	ngOnInit(): void {
+		this.pageRoute()
+	}
+	pageRoute() {
+		const currentURL: string = this.route.snapshot.url[0].path
+		if (currentURL === 'add') {
+			this.isAddPage = true;
+		} else {
+			this.isAddPage = false;
+			this.allTodosService.getTodo(this.pageTodoID).subscribe((res) => {
+				this.form.controls.userId.setValue(res.userId)
+				this.form.controls.todo.setValue(res.todo)
+				this.form.controls.completed.setValue(res.completed)
+			})
+		}
 	}
 	editTodo() {
 		if (this.form.getRawValue().todo !== '' && this.isAddPage) {
 			this.allTodosService.addTodo(this.form.getRawValue()).subscribe()
 			this.router.navigate(['todos'])
 		} else if (this.form.getRawValue().todo !== '' && !this.isAddPage) {
-			this.allTodosService.updateTodo(this.form.getRawValue(), this.pageTodoID)
+			this.allTodosService.updateTodo(this.pageTodoID, this.form.getRawValue()).subscribe()
 			this.router.navigate(['todos'])
 		}
 	}

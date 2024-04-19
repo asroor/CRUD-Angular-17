@@ -1,117 +1,27 @@
 {
   "todos": [
     {
-      "id": "17",
-      "todo": "Create a cookbook with favorite recipes",
-      "completed": false,
-      "userId": 1
-    },
-    {
-      "id": "18",
-      "todo": "Bake a pie with some friends",
-      "completed": false,
-      "userId": 1
-    },
-    {
-      "id": "19",
-      "todo": "Create a compost pile",
-      "completed": true,
-      "userId": 5
-    },
-    {
-      "id": "20",
-      "todo": "Take a hike at a local park",
-      "completed": true,
-      "userId": 43
-    },
-    {
-      "id": "21",
-      "todo": "Take a class at local community center that interests you",
-      "completed": false,
-      "userId": 22
-    },
-    {
-      "id": "22",
-      "todo": "Research a topic interested in",
-      "completed": false,
-      "userId": 4
-    },
-    {
-      "id": "23",
-      "todo": "Plan a trip to another country",
-      "completed": true,
-      "userId": 37
-    },
-    {
-      "id": "24",
-      "todo": "Improve touch typing",
-      "completed": false,
-      "userId": 45
-    },
-    {
-      "id": "25",
-      "todo": "Learn Express.js",
-      "completed": false,
-      "userId": 49
-    },
-    {
-      "id": "26",
-      "todo": "Learn calligraphy",
-      "completed": false,
-      "userId": 50
-    },
-    {
-      "id": "27",
-      "todo": "Have a photo session with some friends",
-      "completed": false,
-      "userId": 14
-    },
-    {
-      "id": "28",
-      "todo": "Go to the gym",
-      "completed": false,
-      "userId": 15
-    },
-    {
-      "id": "29",
-      "todo": "Make own LEGO creation",
-      "completed": false,
-      "userId": 30
-    },
-    {
-      "id": "30",
-      "todo": "Take cat on a walk",
-      "completed": false,
-      "userId": 15
-    },
-    {
-      "id": "3209",
       "userId": 1,
-      "todo": "Salom",
+      "todo": "Uzbekistan",
+      "completed": false,
+      "id": "6e0d"
+    },
+    {
+      "id": "ebcd",
+      "userId": 1,
+      "todo": "Surkhandaryo",
       "completed": false
     },
     {
-      "id": "5e6e",
+      "id": "9d0d",
       "userId": 1,
-      "todo": "12 todo bor",
+      "todo": "Muzrabot",
       "completed": false
     },
     {
-      "id": "8ae5",
+      "id": "154f",
       "userId": 1,
-      "todo": "13 todo bor",
-      "completed": false
-    },
-    {
-      "id": "206c",
-      "userId": 1,
-      "todo": "nim",
-      "completed": false
-    },
-    {
-      "id": "29b5",
-      "userId": 1,
-      "todo": "Nim",
+      "todo": "Savetobot",
       "completed": false
     }
   ],

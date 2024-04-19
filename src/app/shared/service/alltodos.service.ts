@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable } from "rxjs";
+import { Observable } from "rxjs";
 import { ITodos } from "../interface";
 
 @Injectable({
@@ -9,46 +9,47 @@ import { ITodos } from "../interface";
 export class AllTodosService {
 	constructor(private http: HttpClient) { }
 
-
-	private API = new BehaviorSubject<string>('http://localhost:3000/todos')
+	apiURL: string = 'http://localhost:3000/todos';
 
 	/**
 	 * 
 	 * @returns 
 	 */
 	getAllTodos(): Observable<ITodos[]> {
-		return this.http.get<ITodos[]>(this.API.value);
+		return this.http.get<ITodos[]>(this.apiURL);
 	}
+
 	/**
 	 * 
 	 * @param id 
 	 * @returns 
 	 */
-	getTodo(id: number): Observable<ITodos> {
-		return this.http.get<ITodos>(this.API.value)
-	}
-	/**
-	 * @param id
-	 */
-	addTodo(todo: ITodos): Observable<ITodos> {
-		return this.http.post<ITodos>(this.API.value, todo)
+	getTodo(id: number | string): Observable<ITodos> {
+		return this.http.get<ITodos>(`${this.apiURL}/${id}`);
 	}
 	/**
 	 * 
 	 * @param todo 
-	 * @param id 
 	 * @returns 
 	 */
-	updateTodo(todo: ITodos, id: number | string): Observable<ITodos> {
-		return this.http.put<ITodos>(`${this.API}/${id}`, todo);
+	addTodo(todo: ITodos): Observable<ITodos> {
+		return this.http.post<ITodos>(this.apiURL, todo);
+	}
+	/**
+	 * 
+	 * @param id 
+	 * @param todo 
+	 * @returns 
+	 */
+	updateTodo(id: number | string, todo: ITodos): Observable<ITodos> {
+		return this.http.put<ITodos>(`${this.apiURL}/${id}`, todo);
 	}
 	/**
 	 * 
 	 * @param id 
 	 * @returns 
 	 */
-
-	delateTodo(id: number | string): Observable<ITodos> {
-		return this.http.delete<ITodos>(`${this.API.value}/${id}`);
+	deleteTodo(id: number | string): Observable<ITodos> {
+		return this.http.delete<ITodos>(`${this.apiURL}/${id}`);
 	}
 }

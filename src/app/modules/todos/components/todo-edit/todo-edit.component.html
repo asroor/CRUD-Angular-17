@@ -1,5 +1,5 @@
 <form action="" [formGroup]="form">
-	<input type="text" nz-input placeholder="type..." formControlName="todo" required>
+	<input type="text" nz-input placeholder="type..." formControlName="todo" required value="form.todo">
 	<div class="form-buttons">
 		<button type="submit" nz-button nzType="primary" (click)="editTodo()">{{isAddPage? 'Add' : 'Update'}}</button>
 		<button type="button" nz-button nzType="default">Cancel</button>
