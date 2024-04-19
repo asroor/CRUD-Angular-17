@@ -8,9 +8,6 @@ import { LayoutComponent } from './layout.component';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
-
-
-
 @NgModule({
   declarations: [
     LayoutComponent,

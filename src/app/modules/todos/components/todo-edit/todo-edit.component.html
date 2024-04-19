@@ -1,7 +1,7 @@
-<form action="">
-	<input type="text" nz-input placeholder="type...">
+<form action="" [formGroup]="form">
+	<input type="text" nz-input placeholder="type..." formControlName="todo" required>
 	<div class="form-buttons">
-		<button type="button" nz-button nzType="primary">Add</button>
+		<button type="submit" nz-button nzType="primary" (click)="editTodo()">{{isAddPage? 'Add' : 'Update'}}</button>
 		<button type="button" nz-button nzType="default">Cancel</button>
 	</div>
 </form>

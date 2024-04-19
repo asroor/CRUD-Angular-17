@@ -1,3 +1,7 @@
+<div class="table-head">
+	<h1>All todos</h1>
+	<button type="button" nz-button nzType="primary" routerLink="add">Add todo</button>
+</div>
 <nz-table #basicTable [nzData]="todos">
 	<thead>
 		<tr>
@@ -12,7 +16,7 @@
 			<td>{{todo.todo}}</td>
 			<td class="buttons">
 				<button type="button" nz-button nzType="primary" routerLink="update/{{todo.id}}">Update</button>
-				<button type="button" nz-button nzType="primary" nzDanger>Delate</button>
+				<button type="button" nz-button nzType="primary" (click)="delateFN(todo.id!)" nzDanger>Delate</button>
 			</td>
 		</tr>
 	</tbody>
