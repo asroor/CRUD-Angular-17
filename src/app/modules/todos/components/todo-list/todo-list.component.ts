@@ -18,7 +18,7 @@ export class TodoListComponent implements OnInit, OnDestroy {
 	ngOnInit(): void {
 		this.getAll()
 	}
-	delateFN(id: number | string): void {
+	delateFN(id: string): void {
 		this.sub = this.allTodosService.deleteTodo(id).subscribe(
 			res => {
 				this.getAll()

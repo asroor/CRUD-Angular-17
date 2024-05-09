@@ -1,6 +1,8 @@
-export interface ITodos {
+interface IID {
+	id?: string
+}
+export interface ITodos extends IID {
 	userId: number
-	id?: number | string,
 	todo: string;
 	completed: boolean,
 }

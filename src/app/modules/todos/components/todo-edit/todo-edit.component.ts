@@ -18,7 +18,7 @@ export class TodoEditComponent implements OnInit {
 		todo: ['', Validators.required],
 		completed: [false],
 	});
-	pageTodoID: number | string = this.route.snapshot.params['id']
+	pageTodoID: string = this.route.snapshot.params['id']
 	ngOnInit(): void {
 		this.pageRoute()
 	}
@@ -37,11 +37,17 @@ export class TodoEditComponent implements OnInit {
 	}
 	editTodo() {
 		if (this.form.getRawValue().todo !== '' && this.isAddPage) {
-			this.allTodosService.addTodo(this.form.getRawValue()).subscribe()
-			this.router.navigate(['todos'])
+			this.allTodosService.addTodo(this.form.getRawValue()).subscribe(
+				res => {
+					this.router.navigate(['todos'])
+				}
+			)
 		} else if (this.form.getRawValue().todo !== '' && !this.isAddPage) {
-			this.allTodosService.updateTodo(this.pageTodoID, this.form.getRawValue()).subscribe()
-			this.router.navigate(['todos'])
+			this.allTodosService.updateTodo(this.pageTodoID, this.form.getRawValue()).subscribe(
+				res => {
+					this.router.navigate(['todos'])
+				}
+			)
 		}
 	}
 }
