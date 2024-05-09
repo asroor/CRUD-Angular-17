@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { TBreadcrumb } from '../../../types/';
 
 @Injectable({
 	providedIn: 'root'

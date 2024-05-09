@@ -1,7 +1,7 @@
 {
   "todos": [
     {
-      "todo": "Surxondaryo ",
+      "todo": "Surxondaryo",
       "id": "ebcd"
     },
     {
@@ -17,22 +17,10 @@
       "completed": false
     },
     {
-      "id": "8a2a",
       "userId": 1,
       "todo": "Qozoq",
-      "completed": false
-    },
-    {
-      "id": "83dd",
-      "userId": 1,
-      "todo": "asrooor",
-      "completed": false
-    },
-    {
-      "id": "6847",
-      "userId": 1,
-      "todo": "nima",
-      "completed": false
+      "completed": false,
+      "id": "9a87"
     }
   ],
   "total": 150,
