@@ -15,7 +15,7 @@
 			<td>{{todo.id}}</td>
 			<td>{{todo.todo}}</td>
 			<td class="buttons">
-				<button type="button" nz-button nzType="primary" routerLink="update/{{todo.id}}">Update</button>
+				<button type="button" nz-button nzType="primary" routerLink="update/{{todo.id!}}">Update</button>
 				<button type="button" nz-button nzType="primary" (click)="delateFN(todo.id!)" nzDanger>Delate</button>
 			</td>
 		</tr>

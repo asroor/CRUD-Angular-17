@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AllTodosService } from '../../../../shared/service/alltodos.service';
-import { ITodos } from '../../../../shared/interface';
-
 @Component({
 	selector: 'app-todo-edit',
 	templateUrl: './todo-edit.component.html',
@@ -29,9 +27,10 @@ export class TodoEditComponent implements OnInit {
 		} else {
 			this.isAddPage = false;
 			this.allTodosService.getTodo(this.pageTodoID).subscribe((res) => {
-				this.form.controls.userId.setValue(res.userId)
-				this.form.controls.todo.setValue(res.todo)
+				type FormControlKeys = keyof typeof this.form.controls
 				this.form.controls.completed.setValue(res.completed)
+				this.form.controls.todo.setValue(res.todo)
+				this.form.controls.userId.setValue(res.userId)
 			})
 		}
 	}

@@ -7,8 +7,8 @@
 	</thead>
 	<tbody>
 		<tr *ngFor="let todo of basicTable.data">
-			<td>{{todo.id}}</td>
+			<td>{{todo.id!}}</td>
 			<td>{{todo.todo}}</td>
 		</tr>
 	</tbody>
-</nz-table>
+</nz-table> 
