@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { AllTodosService } from '../../../../shared/service/alltodos.service';
+import { AllTodosService } from '../../../../shared';
 import { ITodos } from '../../../../shared/interface';
 import { Grid } from '../../../../shared/crud/grid';
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AllTodosService } from '../../../../shared/service/alltodos.service';
+import { AllTodosService } from '../../../../shared';
 @Component({
 	selector: 'app-todo-edit',
 	templateUrl: './todo-edit.component.html',

@@ -1,5 +1,5 @@
 import { Subscription } from "rxjs";
-import { CRUDService } from "../service/crud.service";
+import { CRUDService } from "../";
 
 export abstract class Grid<IRes> {
 	todos: IRes[]
