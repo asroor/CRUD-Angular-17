@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { AllTodosService } from '../../../../shared';
-import { ITodos } from '../../../../shared/interface';
-import { Grid } from '../../../../shared/crud/grid';
+import { ITodos } from '../../../../shared';
+import { Grid } from '../../../../shared';
 
 @Component({
 	selector: 'app-todo-list',

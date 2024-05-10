@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AllTodosService } from '../../../../shared/';
-import { ITodos } from '../../../../shared/interface';
+import { ITodos } from '../../../../shared';
 
 @Component({
 	selector: 'app-home-list',
