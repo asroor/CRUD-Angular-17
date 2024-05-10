@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TBreadcrumb } from '../../../../../types';
-import { BreadcrumbService } from '../../../../shared';
 import { AllTodosService } from '../../../../shared/service/alltodos.service';
 import { ITodos } from '../../../../shared/interface';
 
