@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AllTodosService } from '../../../../shared/';
+import { Component, OnDestroy } from '@angular/core';
+import { AllTodosService, Grid } from '../../../../shared/';
 import { ITodos } from '../../../../shared';
 
 @Component({
@@ -7,14 +7,12 @@ import { ITodos } from '../../../../shared';
 	templateUrl: './home-list.component.html',
 	styleUrl: './home-list.component.css'
 })
-export class HomeListComponent implements OnInit {
-	todos: ITodos[]
-	constructor(private allTodosService: AllTodosService) {
-		this.todos = []
+export class HomeListComponent extends Grid<ITodos> implements OnDestroy {
+
+	constructor($data: AllTodosService) {
+		super($data);
 	}
-	ngOnInit(): void {
-		this.allTodosService.getAllTodos().subscribe((res) => {
-			this.todos = res
-		})
+	ngOnDestroy(): void {
+		this.sub.unsubscribe()
 	}
 }
